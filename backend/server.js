@@ -1,14 +1,20 @@
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
-// Connect Database
+// Connect DB
 connectDB();
 
+// Middleware (VERY IMPORTANT)
 app.use(express.json());
 
+// Register routes (THIS WAS MISSING)
+app.use("/api/users", userRoutes);
+
+// Test route
 app.get("/", (req, res) => {
   res.send("Smart Campus Backend Running");
 });

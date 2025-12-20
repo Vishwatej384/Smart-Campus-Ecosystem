@@ -13,6 +13,8 @@ app.use(express.json());
 
 // Mount routes
 app.use("/api/users", userRoutes);
+console.log("✅ userRoutes mounted");
+
 
 // Root test
 app.get("/", (req, res) => {

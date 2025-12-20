@@ -5,16 +5,16 @@ const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
-// Connect to database
+// Connect DB
 connectDB();
 
-// Middleware to read JSON body
+// Body parser
 app.use(express.json());
 
-// 🔥 THIS LINE IS REQUIRED
+// Mount routes
 app.use("/api/users", userRoutes);
 
-// Test route
+// Root test
 app.get("/", (req, res) => {
   res.send("Smart Campus Backend Running");
 });

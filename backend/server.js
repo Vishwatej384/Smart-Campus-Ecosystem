@@ -5,13 +5,13 @@ const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
-// Connect DB
+// Connect to database
 connectDB();
 
-// Middleware (VERY IMPORTANT)
+// Middleware to read JSON body
 app.use(express.json());
 
-// Register routes (THIS WAS MISSING)
+// 🔥 THIS LINE IS REQUIRED
 app.use("/api/users", userRoutes);
 
 // Test route
